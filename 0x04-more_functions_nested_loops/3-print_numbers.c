@@ -1,18 +1,19 @@
 #include "main.h"
 
 /**
- * _puts - prints a string
- * @str: string to print
+ * print_numbers - prints numbers 0 to 9
  *
  * Return: void
+ *
  */
 
-void _puts(char *str)
+void print_numbers(void)
 {
-	while (*str)
+	int c;
+
+	for (c = 0; c <= 9; c++)
 	{
-		_putchar(*str);
-		str++;
+		_putchar(c + '0');
 	}
 	_putchar('\n');
 }
