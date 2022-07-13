@@ -8,7 +8,7 @@
  * @value: value to look for
  * Return: int
  */
- int binary_search(int *array, size_t size, int value)
+int binary_search(int *array, size_t size, int value)
 {
 	size_t i;
 	size_t m;
