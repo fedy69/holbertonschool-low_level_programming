@@ -21,7 +21,7 @@
 	while (array && l <= r)
 	{
 		m = (l + r) / 2;
-		printf("Searching in array: ")
+		printf("Searching in array: ");
 		for (i = l; i <= r; i++)
 		{
 			printf("%d", array[i]);
@@ -35,7 +35,8 @@
 			l = m + 1;
 		else if (array[m] > value)
 			r = m - 1;
-		
+		else
+			return (m);
 	}
 	return (-1);
 }
