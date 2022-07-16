@@ -1,42 +1,34 @@
 #include "search_algos.h"
 /**
- * binary_search_recursive - sub-array to look into
- *
- * @array: sub array to look into
- * @left: value of  lower bound
- * @right: value of  higher bound
- * @value: value to look for
- * Return: int
+ * binary_search - searches for a value
+ * @array: the array searched through
+ * @size: the length of the array
+ * @value: value we are looking for
+ * Return: index where value is found or -1 if it failed
  */
+
 int binary_search(int *array, size_t size, int value)
 {
-	size_t i;
-	size_t m;
-	size_t l = 0;
-	size_t r = size - 1;
+	size_t i, l, j;
 
 	if (array == NULL)
 		return (-1);
 
-	while (array && l <= r)
-	{
-		m = (l + r) / 2;
-		printf("Searching in array: ");
-		for (i = l; i <= r; i++)
-		{
-			printf("%d", array[i]);
-			if (i != r)
-				printf(", ");
-			else
-				printf("\n");
-		}
+	for (l = 0, j = size - 1; j >= l;)
 
-		if (array[m] < value)
-			l = m + 1;
-		else if (array[m] > value)
-			r = m - 1;
+	{
+		printf("Searching in array: ");
+		for (i = l; i < j; i++)
+			printf("%d, ", array[i]);
+		printf("%d\n", array[i]);
+		i = l + (j - l) / 2;
+		if (array[i] == value)
+			return (i);
+		if (array[i] > value)
+			j = i - 1;
 		else
-			return (m);
+			l = i + 1;
 	}
 	return (-1);
+
 }
